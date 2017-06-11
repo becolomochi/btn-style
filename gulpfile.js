@@ -22,10 +22,10 @@ gulp.task('browser-sync', ['less'], function() {
 
 gulp.task('less', function() {
   return gulp.src(['asset/less/**/*.less', '!asset/less/**/_*.less'])
+    .pipe(plumber({
+      errorHandler: notify.onError("Error: <%= error.message %>")
+    }))
     .pipe(less())
-		.pipe(plumber({
-    	errorHandler: notify.onError("Error: <%= error.message %>")
-  	}))
 		.pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
