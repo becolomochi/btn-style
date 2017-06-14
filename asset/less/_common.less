@@ -92,6 +92,57 @@
 	}
 }
 
+.btn-arrow {
+	.reset;
+	position: relative;
+	overflow: hidden;
+	width: 400px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border: 1px solid currentColor;
+	color: #000;
+	font-size: 14px;
+	line-height: 1.4;
+	transition: letter-spacing 0.1s;
+	&:before,
+	&:after {
+		position: absolute;
+		top: 50%;
+		content: '';
+		opacity: 0;
+		transition: right 0.3s;
+	}
+	&:before {
+		right: 100%;
+		width: 20px;
+		height: 1px;
+		background: currentColor;
+	}
+	&:after {
+		margin-top: -4px;
+		right: 10px;
+		width: 8px;
+		height: 8px;
+		border-top: 1px solid currentColor;
+		border-right: 1px solid currentColor;
+		transform: rotate(45deg);
+	}
+	&:hover{
+		letter-spacing: 10px;
+		&:before,
+		&:after {
+			opacity: 1;
+			right: 5px;
+		}
+	}
+	&:active {
+		&:before,
+		&:after {
+			right: -30px;
+		}
+	}
+}
+
 
 .wrapper {
 	margin-top: 30px;
