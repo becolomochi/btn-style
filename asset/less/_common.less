@@ -8,6 +8,7 @@
 }
 
 @main-color: #508ec5;
+@sub-color: #c4ff14;
 
 .btn-border {
 	.reset;
@@ -226,6 +227,30 @@
 		&::after {
 			width: 50%;
 		}
+	}
+}
+
+.btn-gradient {
+	.reset;
+	padding: 10px;
+	max-width: 300px;
+	width: 100%;
+	color: #fff;
+	font-size: 16px;
+	line-height: 1.4;
+	font-weight: bold;
+	display: inline-block;
+	background-image: linear-gradient(to right, @sub-color, @main-color, @sub-color);
+	background-size: 200%;
+	background-position: right;
+	transition: background-position 0.3s;
+	&:hover {
+		background-position: left;
+	}
+	&:active {
+		opacity: 0.9;
+		position: relative;
+		top: 1px;
 	}
 }
 
